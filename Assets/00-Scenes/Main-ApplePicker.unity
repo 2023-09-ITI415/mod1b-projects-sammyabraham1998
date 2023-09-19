@@ -317,9 +317,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136951436588758142, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 818453641026664679, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
       propertyPath: m_Name
       value: Apple Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 818453641026664679, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894945780945289211, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4681662288476491005, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -361,6 +373,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5552446495430811575, guid: 3148b2ffe964a9f429bc3876bfa48ec1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -386,10 +402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 372c4f0e347655247b05e2c1ad0632ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applePrefab: {fileID: 0}
+  applePrefab: {fileID: 3396043713101808578, guid: 312ccf5f4716f8649a45fd44bf2eefaa, type: 3}
   speed: 10
   leftAndRightEdge: 20
-  chanceToChangeDirections: 0.1
+  chanceToChangeDirections: 0.02
   secondsBetweenAppleDrops: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
