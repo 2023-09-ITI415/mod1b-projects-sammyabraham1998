@@ -17,7 +17,7 @@ public class ProjectileLine : MonoBehaviour
     {
         S = this;
         line = GetComponent<LineRenderer>();
-        line enabled = false;
+        line.enabled = false;
         points = new List<Vector3>();
     }
 
@@ -33,8 +33,8 @@ public class ProjectileLine : MonoBehaviour
             if (_poi != null)
             {
                 line.enabled = false;
-                points = new List<Vector3> ();
-                AddPoint;
+                points = new List<Vector3>();
+                AddPoint();
             }
         }
     }
@@ -62,6 +62,55 @@ public class ProjectileLine : MonoBehaviour
             line.SetPosition(0, points[0]);
             line.SetPosition(1, points[1]);
             line.enabled = true;
+        }
+        else
+        {
+            points.Add(pt);
+            line.positionCount = points.Count;
+            line.SetPosition(points.Count - 1, lastPoint);
+            line.enabled = true;
+        }
+    }
+
+    public Vector3 lastPoint()
+    {
+
+        get
+            {
+            if (points == null)
+            {
+                return (Vector3.zero);
+            }
+
+            return points[points.Count - 1];
+            }
+    }
+
+    void FixedUpdate()
+    {
+        if (poi == null)
+        {
+            if (FollowCam.POI != null)
+            {
+                if (FollowCam.POI.tag == "Projectile")
+                {
+                    poi = FollowCam.POI;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        AddPoint();
+        if (FollowCam.POI == null)
+        {
+            poi = null;
         }
     }
 
