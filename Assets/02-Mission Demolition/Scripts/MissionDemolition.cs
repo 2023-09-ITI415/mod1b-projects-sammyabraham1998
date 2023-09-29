@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;   //	a
-using static UnityEditor.Progress;
 
 public enum GameMode
 {   //	b
