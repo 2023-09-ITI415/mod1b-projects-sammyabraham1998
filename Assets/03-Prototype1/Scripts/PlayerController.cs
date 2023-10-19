@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 1;
     public TextMeshProUGUI countText;
+    public TextMeshProUGUI winText;
+    public TextMeshProUGUI findMoreKeysText;
     public GameObject win;
 
     private Rigidbody rb;
@@ -24,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
         SetCountText();
         win.SetActive(false);
+
+        winText = GameObject.Find("Win").GetComponent<TextMeshProUGUI>();
+        findMoreKeysText = GameObject.Find("FindMoreKeys").GetComponent<TextMeshProUGUI>();
     }
 
     void OnMove(InputValue movementValue)
@@ -62,9 +67,18 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-        if (other.gameObject.CompareTag("Goal") && count == 4)
+        if (count == 4)
         {
             win.SetActive(true);
+        }
+
+        if (other.tag == "Goal" && count == 4)
+        {
+            winText.enabled = true;
+        }
+        else
+        {
+            findMoreKeysText.enabled = true;
         }
     }
 
