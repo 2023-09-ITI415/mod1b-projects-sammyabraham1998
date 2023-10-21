@@ -630,7 +630,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   countText: {fileID: 635189825}
+  winText: {fileID: 0}
+  findMoreKeysText: {fileID: 0}
   win: {fileID: 1926156679}
+  count: 0
 --- !u!114 &1254797081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,6 +676,8 @@ GameObject:
   - component: {fileID: 1269249408}
   - component: {fileID: 1269249407}
   - component: {fileID: 1269249406}
+  - component: {fileID: 1269249410}
+  - component: {fileID: 1269249411}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -766,6 +771,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1269249410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269249405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ba7563f8489944e99d4ecd5d0bc27b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  countText: {fileID: 635189825}
+  winText: {fileID: 0}
+  findMoreKeysText: {fileID: 0}
+  win: {fileID: 1926156679}
+  count: 0
+--- !u!54 &1269249411
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269249405}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &1276394450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1534,6 +1584,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 546270736036216693, guid: ba47da4afe8c6af409b3d75774a25ff5, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 546270736036216693, guid: ba47da4afe8c6af409b3d75774a25ff5, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5362985225920695446, guid: ba47da4afe8c6af409b3d75774a25ff5, type: 3}

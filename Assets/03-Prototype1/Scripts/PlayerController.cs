@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject win;
 
     private Rigidbody rb;
-    private int count;
+    public int count;
     private float movementX;
     private float movementY;
 
@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
         SetCountText();
         win.SetActive(false);
 
-        winText = GameObject.Find("Win").GetComponent<TextMeshProUGUI>();
-        findMoreKeysText = GameObject.Find("FindMoreKeys").GetComponent<TextMeshProUGUI>();
     }
 
     void OnMove(InputValue movementValue)
@@ -41,10 +39,10 @@ public class PlayerController : MonoBehaviour
 
     void SetCountText()
     {
-        
+
         countText.text = "Count: " + count.ToString();
 
-        if(count == 4)
+        if (count == 4)
         {
             win.SetActive(true);
         }
@@ -59,27 +57,12 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Key"))
+        if (other.gameObject.CompareTag("Key"))
         {
             other.gameObject.SetActive(false);
             count++;
 
             SetCountText();
         }
-
-        if (count == 4)
-        {
-            win.SetActive(true);
-        }
-
-        if (other.tag == "Goal" && count == 4)
-        {
-            winText.enabled = true;
-        }
-        else
-        {
-            findMoreKeysText.enabled = true;
-        }
     }
-
 }
